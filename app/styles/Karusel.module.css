@@ -1,0 +1,35 @@
+.marquee {
+    --gap: 1.5rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    box-shadow: var(--bs);
+    margin: 1rem 0;
+    cursor: pointer;
+  }
+  
+  .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll 30s linear infinite;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @media screen and (max-width: 1030px) {
+    .marquee {
+        display: none;
+    }
+}
